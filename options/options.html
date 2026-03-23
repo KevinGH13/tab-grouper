@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tab Grouper – Reglas</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <h1>Tab Grouper</h1>
+        <p class="subtitle">Define reglas para agrupar tus pestañas automáticamente</p>
+      </div>
+      <button id="btn-add-rule" class="btn-primary">+ Nueva regla</button>
+    </div>
+
+    <ul id="rules-list" class="rules-list"></ul>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h2 id="modal-title">Nueva regla</h2>
+
+      <div class="field">
+        <label for="rule-name">Nombre del grupo</label>
+        <input type="text" id="rule-name" placeholder="Ej: AWS, Pull Requests..." />
+      </div>
+
+      <div class="field">
+        <label>Color del grupo</label>
+        <div class="color-grid" id="color-grid">
+          <button class="color-swatch" data-color="grey"   style="background:#5f6368"></button>
+          <button class="color-swatch" data-color="blue"   style="background:#4285f4"></button>
+          <button class="color-swatch" data-color="red"    style="background:#ea4335"></button>
+          <button class="color-swatch" data-color="yellow" style="background:#fbbc04"></button>
+          <button class="color-swatch" data-color="green"  style="background:#34a853"></button>
+          <button class="color-swatch" data-color="pink"   style="background:#ff63b8"></button>
+          <button class="color-swatch" data-color="purple" style="background:#af5cf7"></button>
+          <button class="color-swatch" data-color="cyan"   style="background:#24c1e0"></button>
+          <button class="color-swatch" data-color="orange" style="background:#ff8c00"></button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Condiciones <span class="hint">(al menos una debe coincidir)</span></label>
+        <ul id="conditions-list" class="conditions-list"></ul>
+        <button id="btn-add-condition" class="btn-text">+ Agregar condición</button>
+      </div>
+
+      <p class="hint-block">
+        Usa <code>*</code> como comodín en los patrones. Sin comodín, busca coincidencia parcial.<br/>
+        Ej: <code>*aws.amazon.com*</code> o <code>Pull Request</code>
+      </p>
+
+      <div class="modal-actions">
+        <button id="btn-cancel" class="btn-secondary">Cancelar</button>
+        <button id="btn-save" class="btn-primary">Guardar regla</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tab Grouper</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="header">
+    <span class="title">Tab Grouper</span>
+    <button id="btn-options" class="icon-btn" title="Administrar reglas">⚙️</button>
+  </div>
+
+  <div class="section">
+    <div class="row">
+      <span class="label">Agrupación automática</span>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-auto" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <button id="btn-group-all" class="btn-primary">Agrupar todas las pestañas ahora</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <p class="section-title">Grupos activos</p>
+    <ul id="groups-list" class="groups-list">
+      <li class="empty-state">Sin grupos activos</li>
+    </ul>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
